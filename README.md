@@ -1,7 +1,7 @@
 # color-split
-A Python script to split an indexed color or an RGB image with less than 256 colors into b&amp;w channels of each color. Created to be used for printing color raster images on metal with a laser.
+A Python script to split an indexed color or an RGB image with less than 256 colors into b&amp;w channels of each color. Created to be used for printing color raster images on metal (titanium and steel) with a laser.
 
-The Python script requires 3.x Python, the PIL and webcolors Python to be installed. It has some additional simple functionality besides the color splitting, such as upscaling, outputting the color palette and more for convenience. Here’s how you use it for an image named `dith.png` that you’d engrave using 635 DPI (0.04mm line width):
+The Python script requires 3.x Python, the PIL and webcolors Python modules to be installed. It has some additional simple functionality besides the color splitting, such as upscaling, outputting the color palette and more for convenience. Here’s how you use it for an image named `dith.png` that you’d engrave with Lightburn or some other laser engraving software using 635 DPI (0.04mm line width):
 ```
 PS C:\colors> .\colors.py --dpi 635 --scale 2 dith.png
 Image size is 1200x1200. Image mode is RGBA, number of colors is 8.
@@ -18,11 +18,11 @@ Physical print size for 635 DPI/PPI (line interval 0.04mm):
 width: 96.00mm
 height: 96.00mm
 ```
-It will write separate images for each color into the same folder it is run from. For laser printing add them to a Lightburn project, set the correct physical size for each image as specified by the script, turn on pass-through mode for each of them and set the frequency/speed/power/pulse width parameters for each image for specific color.
+It will write separate images for each color into the same folder it is run from. For laser engraving add them to a Lightburn project, set the correct physical size for each image as specified by the script, turn on pass-through mode for each of them and set the frequency/speed/power/pulse width parameters for each image for specific color.
 
-The process of engraving is not too complex, first quantize/dither the colors of an image to a limited number or use a specific palette to remap the colors. Split the image into b&w images of each color using the script and engrave all of them. For quantizing and dithering/halftoning you can use your favorite image editing software or some specific tool such as [Ditherista](https://github.com/robertkist/ditherista).
+The process of engraving is not too complex, first quantize/dither the colors of an image to a limited number or use a specific palette to remap the colors. Split the image into b&w images of each color using the script and engrave all of them. For quantizing and dithering you can use your favorite image editing software or some specific tool such as [Ditherista](https://github.com/robertkist/ditherista).
 
-Here are a few sample color engravings on 10x10cm titanium metal plates using a MOPA Fiber laser.
+Here are a few sample color engravings on 10x10cm titanium metal plates using a MOPA Fiber laser. The colors in these images are thin layers of oxides formed using a laser.
 
 <img width="30%" height="30%" alt="" src="https://github.com/user-attachments/assets/c1328cbd-c2de-4b45-8292-c76edf5a41ac" />
 
